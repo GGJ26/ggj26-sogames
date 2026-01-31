@@ -13,6 +13,10 @@ public class MaskManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start() {
+        SetMask(selectedMask.id);
+    }
+
     public void AddMaskListener(UnityAction action)
     {
         changeMaskEvent.AddListener(action);
