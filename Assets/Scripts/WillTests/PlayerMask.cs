@@ -10,18 +10,18 @@ public class PlayerMask : MonoBehaviour {
 
     private IEnumerator AddMaskListener()
     {
-        while(WillManagerTest.instance == null)
+        while(MaskManager.instance == null)
             yield return null;
 
-        WillManagerTest.instance.AddMaskListener(ChangeMask);
+        MaskManager.instance.AddMaskListener(ChangeMask);
     }
 
     private void OnDisable() {
-        WillManagerTest.instance.RemoveMaskListener(ChangeMask);
+        MaskManager.instance.RemoveMaskListener(ChangeMask);
     }
 
     private void ChangeMask()
     {
-        spriteRenderer.sprite = WillManagerTest.instance.selectedMask.sprite;
+        spriteRenderer.sprite = MaskManager.instance.selectedMask.sprite;
     }
 }

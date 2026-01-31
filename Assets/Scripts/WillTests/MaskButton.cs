@@ -6,6 +6,6 @@ public class MaskButton : MonoBehaviour
 
     public void SelectMask()
     {
-        WillManagerTest.instance.SetMask(maskItem.id);
+        MaskManager.instance.SetMask(maskItem.id);
     }
 }
