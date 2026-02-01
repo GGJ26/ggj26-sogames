@@ -17,7 +17,6 @@ public class AudioManager : MonoBehaviour
 
     private List<AudioSource> audioSources = new List<AudioSource>();
     private Dictionary<string, AudioClip> soundDictionary = new Dictionary<string, AudioClip>();
-    private float globalSfxVolume = 1f;
 
     private static AudioManager _instance;
     public static AudioManager Instance
@@ -60,7 +59,10 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-
+    void Start()
+    {
+        MaskManager.instance.AddMaskListener(PlayMaskSound);
+    }
     public void Log(GameObject gameObjectToLog, string scriptName = "null", string content = "")
     {
         string gameObjectName;
@@ -85,6 +87,11 @@ public class AudioManager : MonoBehaviour
             }
         }
         return audioSources.Count > 0 ? audioSources[0] : null;
+    }
+    public void PlayMaskSound()
+    {
+        string soundName = MaskManager.instance.selectedMask.id;
+        PlaySound(soundName);
     }
     public void PlaySound(string soundName)
     {
