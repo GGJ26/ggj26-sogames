@@ -1,0 +1,1953 @@
+fileFormatVersion: 2
+guid: 9502889233b6e1b4285d8d9543d60663
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1693920679128569622
+    second: CavernTileSet_0
+  - first:
+      213: 1093612967589571243
+    second: CavernTileSet_1
+  - first:
+      213: -8061228555455966033
+    second: CavernTileSet_2
+  - first:
+      213: 2217746826217154300
+    second: CavernTileSet_3
+  - first:
+      213: 2519205658277416369
+    second: CavernTileSet_4
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CavernTileSet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 100}
+        - {x: 126, y: 108}
+        - {x: -118, y: 108}
+        - {x: -118, y: -57}
+        - {x: -113, y: -75}
+        - {x: -96, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 96}
+        - {x: 118, y: 98}
+        - {x: 97, y: 98}
+        - {x: 96, y: 100}
+        - {x: 88, y: 102}
+        - {x: 75, y: 102}
+        - {x: 74, y: 104}
+        - {x: 50, y: 104}
+        - {x: 46, y: 102}
+        - {x: 42, y: 102}
+        - {x: 34, y: 104}
+        - {x: 26, y: 104}
+        - {x: 24, y: 102}
+        - {x: 18, y: 100}
+        - {x: 17, y: 98}
+        - {x: 4, y: 98}
+        - {x: 2, y: 102}
+        - {x: -10, y: 104}
+        - {x: -29, y: 104}
+        - {x: -30, y: 106}
+        - {x: -54, y: 106}
+        - {x: -55, y: 104}
+        - {x: -96, y: 104}
+        - {x: -97, y: 102}
+        - {x: -104, y: 102}
+        - {x: -110, y: 100}
+        - {x: -112, y: 98}
+        - {x: -112, y: 90}
+        - {x: -108, y: 85}
+        - {x: -104, y: 84}
+        - {x: -98, y: 82}
+        - {x: -98, y: 78}
+        - {x: -102, y: 74}
+        - {x: -102, y: 64}
+        - {x: -98, y: 59}
+        - {x: -94, y: 55}
+        - {x: -92, y: 54}
+        - {x: -90, y: 50}
+        - {x: -88, y: 43}
+        - {x: -90, y: 42}
+        - {x: -92, y: 40}
+        - {x: -94, y: 32}
+        - {x: -102, y: 28}
+        - {x: -108, y: 26}
+        - {x: -110, y: 22}
+        - {x: -114, y: 20}
+        - {x: -116, y: 18}
+        - {x: -116, y: 9}
+        - {x: -112, y: 6}
+        - {x: -110, y: 2}
+        - {x: -104, y: -2}
+        - {x: -100, y: -6}
+        - {x: -96, y: -9}
+        - {x: -96, y: -18}
+        - {x: -94, y: -19}
+        - {x: -94, y: -27}
+        - {x: -96, y: -28}
+        - {x: -96, y: -41}
+        - {x: -98, y: -42}
+        - {x: -100, y: -44}
+        - {x: -100, y: -57}
+        - {x: -102, y: -57}
+        - {x: -108, y: -64}
+        - {x: -110, y: -70}
+        - {x: -110, y: -74}
+        - {x: -108, y: -77}
+        - {x: -104, y: -81}
+        - {x: -98, y: -86}
+        - {x: -96, y: -87}
+        - {x: -96, y: -102}
+        - {x: -94, y: -103}
+        - {x: -94, y: -112}
+        - {x: -92, y: -113}
+        - {x: -92, y: -123}
+        - {x: -94, y: -124}
+        - {x: -94, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0.49
+      bones: []
+      spriteID: 617952502e3028710800000000000000
+      internalID: 1693920679128569622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 108}
+        - {x: -128, y: 108}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 96}
+        - {x: 127, y: 106}
+        - {x: -128, y: 106}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: baaefe6233b4d2f00800000000000000
+      internalID: 1093612967589571243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_2
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 118, y: -103}
+        - {x: 118, y: 80}
+        - {x: 115, y: 102}
+        - {x: 106, y: 108}
+        - {x: -128, y: 108}
+        - {x: -128, y: -128}
+        - {x: 106, y: -128}
+      physicsShape:
+      - - {x: 116, y: -93}
+        - {x: 116, y: 106}
+        - {x: -114, y: 106}
+        - {x: -128, y: 105}
+        - {x: -128, y: -128}
+        - {x: 96, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4dfcac653c02090800000000000000
+      internalID: -8061228555455966033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 118, y: -76}
+        - {x: 118, y: 91}
+        - {x: 114, y: 117}
+        - {x: 105, y: 125}
+        - {x: 97, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 101, y: -128}
+      physicsShape:
+      - - {x: 116, y: -83}
+        - {x: 116, y: 115}
+        - {x: 105, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 103, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd87c9e23406f220800000000000000
+      internalID: 2519205658277416369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_5
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -95, y: 128}
+        - {x: -120, y: 93}
+        - {x: -120, y: -50}
+        - {x: -111, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -92, y: 128}
+        - {x: -118, y: 120}
+        - {x: -118, y: -121}
+        - {x: -117, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ff66f4120b05342a2f6a2e64405e8f
+      internalID: 91682516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_6
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -114}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -101}
+        - {x: -76, y: -128}
+        - {x: 69, y: -128}
+      physicsShape:
+      - - {x: 128, y: -110}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -106}
+        - {x: -90, y: -128}
+        - {x: 74, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa369338aecfedc4bbeab5ab3b8a0c0d
+      internalID: -710844475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -108, y: 128}
+        - {x: -120, y: 87}
+        - {x: -120, y: -45}
+        - {x: -108, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -118, y: 128}
+        - {x: -118, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325abe640e2ba65459a2e4f988ad036d
+      internalID: 231441694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a66169014ceef42a34cfab193c77ba
+      internalID: -1073994186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 118, y: 118}
+        - {x: 105, y: 125}
+        - {x: 97, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 118, y: -128}
+      physicsShape:
+      - - {x: 116, y: -83}
+        - {x: 116, y: 115}
+        - {x: 105, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 103, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe054ce2835a1de4da8a8db5258cbcef
+      internalID: 1891309080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_10
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb4c1b4db732214087c13c9f4728071
+      internalID: -1877727861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_11
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 107}
+        - {x: 105, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 98}
+        - {x: 108, y: 122}
+        - {x: 94, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ae41504d400554aaf97b9018e9ff6d
+      internalID: -288972551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_12
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 108}
+        - {x: -128, y: 108}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 96}
+        - {x: 127, y: 106}
+        - {x: -128, y: 106}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a865411ff685bc42800ba152b5d6269
+      internalID: -538816543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_13
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -99, y: 128}
+        - {x: -128, y: 103}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -92, y: 128}
+        - {x: -92, y: 126}
+        - {x: -128, y: 100}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899214d2360778a478057c7d0835def8
+      internalID: -1847980104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -94, y: 128}
+        - {x: -106, y: 90}
+        - {x: -106, y: 6}
+        - {x: -98, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -92, y: 128}
+        - {x: -104, y: 90}
+        - {x: -104, y: 5}
+        - {x: -96, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbff5bf3e6b938e42bb5e0d8c882f148
+      internalID: 1437985967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a83133273d1814dbfaaeabbb2150ab
+      internalID: -622772407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 108, y: -72}
+        - {x: 108, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 99, y: -128}
+      physicsShape:
+      - - {x: 106, y: -103}
+        - {x: 106, y: 126}
+        - {x: 96, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 100, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e146dcbb962a4b14abf9b2efef312bcd
+      internalID: -419390405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 100}
+        - {x: 94, y: 110}
+        - {x: -74, y: 110}
+        - {x: -128, y: 104}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 96}
+        - {x: 123, y: 108}
+        - {x: -116, y: 108}
+        - {x: -128, y: 98}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27399f33392bae4bbb9ec1937453eb3
+      internalID: -1454591866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_19
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -106}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 99, y: -128}
+      physicsShape:
+      - - {x: 128, y: -104}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 96, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b4d492ef7bf014c8b6fa26395371cd
+      internalID: -1532871311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -107}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -109}
+        - {x: -106, y: -112}
+        - {x: 107, y: -112}
+      physicsShape:
+      - - {x: 68, y: -109}
+        - {x: 128, y: -100}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -105}
+        - {x: -89, y: -110}
+        - {x: 50, y: -110}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b79094b5ae5b7145950ec6ee333de41
+      internalID: -2112230685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_21
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -108}
+        - {x: -106, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -107}
+        - {x: -107, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cea328db9515f44cac21d7c786eef4b
+      internalID: -1011983557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_22
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -107}
+        - {x: -100, y: -112}
+        - {x: 128, y: -112}
+      physicsShape:
+      - - {x: 128, y: -108}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -105}
+        - {x: -88, y: -110}
+        - {x: 102, y: -110}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4165ad3f412846d4182dfbef46615f16
+      internalID: 1723241721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -111}
+        - {x: 128, y: 128}
+        - {x: -105, y: 128}
+        - {x: -110, y: 55}
+        - {x: -110, y: -101}
+        - {x: -92, y: -114}
+        - {x: 90, y: -114}
+      physicsShape:
+      - - {x: 128, y: -109}
+        - {x: 128, y: 128}
+        - {x: -100, y: 128}
+        - {x: -108, y: 104}
+        - {x: -108, y: -87}
+        - {x: -94, y: -112}
+        - {x: 80, y: -112}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1588ec9753d28c4f8e206178d3fbe07
+      internalID: -1911517138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -107}
+        - {x: -100, y: -112}
+        - {x: 128, y: -112}
+      physicsShape:
+      - - {x: 128, y: -108}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -105}
+        - {x: -88, y: -110}
+        - {x: 102, y: -110}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4830047510aa1419b3d9b86c27e523
+      internalID: -1933444566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 108, y: 110}
+        - {x: 99, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -108}
+        - {x: 108, y: -108}
+      physicsShape:
+      - - {x: 106, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -106}
+        - {x: 106, y: -106}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742632cd6e8429942b5b00c87349a4cc
+      internalID: 1487565144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_26
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a98f1b6cc72f8b4bb662edc9d7b9f6f
+      internalID: 1821279743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_27
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 118, y: -94}
+        - {x: 118, y: 40}
+        - {x: 98, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 107, y: -128}
+      physicsShape:
+      - - {x: 116, y: -104}
+        - {x: 116, y: 75}
+        - {x: 100, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 105, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6175e67bc11b64e9509a111315aea7
+      internalID: -479195937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_28
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -95, y: 128}
+        - {x: -108, y: 110}
+        - {x: -108, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -92, y: 128}
+        - {x: -95, y: 123}
+        - {x: -100, y: 55}
+        - {x: -106, y: 12}
+        - {x: -106, y: -119}
+        - {x: -97, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a2814ff80053746b61b99a8645ee78
+      internalID: 1074557021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_29
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 118, y: -76}
+        - {x: 118, y: 91}
+        - {x: 114, y: 117}
+        - {x: 105, y: 125}
+        - {x: 97, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 101, y: -128}
+      physicsShape:
+      - - {x: 116, y: -83}
+        - {x: 116, y: 115}
+        - {x: 105, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 103, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5297399aa9cf70499d815e8fe9bdf11
+      internalID: -2026968221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_35
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 108}
+        - {x: -128, y: 108}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 96}
+        - {x: 127, y: 106}
+        - {x: -128, y: 106}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac7208236b96074f810a74996342425
+      internalID: -1622358627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 106}
+        - {x: 102, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 101}
+        - {x: 124, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5de4f3b654b8a24a8df05c9a43b1f03
+      internalID: -1111476871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_41
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -108, y: 128}
+        - {x: -128, y: 112}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -97, y: 128}
+        - {x: -128, y: 118}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: afae9d8cbf89be3499529f0d64ad715b
+      internalID: -1280477190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_42
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -123}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 117, y: -128}
+      physicsShape:
+      - - {x: 118, y: -124}
+        - {x: 126, y: -118}
+        - {x: 128, y: -116}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 110, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57c94595224f8046ab929e1731b2205
+      internalID: 106083226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_43
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -107}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -114}
+        - {x: 75, y: -114}
+      physicsShape:
+      - - {x: 128, y: -100}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -112}
+        - {x: 53, y: -112}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9c8a23d97d10b43875410c80842dd5
+      internalID: -1281650185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 117}
+        - {x: 107, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 112}
+        - {x: 102, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e44e467cd2211b41aae37c8e0e65c5a
+      internalID: 145734639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_45
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 108}
+        - {x: -128, y: 108}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 96}
+        - {x: 127, y: 106}
+        - {x: -128, y: 106}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff792f87cb7efb4d84e318ee4943618
+      internalID: 1821795703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_46
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -111, y: 128}
+        - {x: -128, y: 114}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -94, y: 128}
+        - {x: -98, y: 126}
+        - {x: -116, y: 124}
+        - {x: -128, y: 106}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92280d5a68e8785488257cd49e5fdf79
+      internalID: 1878190234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_47
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -112}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 114, y: -128}
+      physicsShape:
+      - - {x: 113, y: -127}
+        - {x: 128, y: -108}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 110, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f646d15fea8b9f1448d7f979bd089463
+      internalID: 1220773906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_50
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -110}
+        - {x: -118, y: -122}
+        - {x: -112, y: -128}
+        - {x: 128, y: -128}
+      physicsShape:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -108}
+        - {x: -125, y: -113}
+        - {x: -112, y: -127}
+        - {x: -110, y: -128}
+        - {x: 128, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3862a2054bad264e9f9a917d982e445
+      internalID: 2102448472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_51
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -107}
+        - {x: -100, y: -112}
+        - {x: 128, y: -112}
+      physicsShape:
+      - - {x: 128, y: -108}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -105}
+        - {x: -88, y: -110}
+        - {x: 102, y: -110}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41e3ba8244141640b1d89fcbcf57443
+      internalID: 1349217934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_52
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -107}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -109}
+        - {x: -106, y: -112}
+        - {x: 107, y: -112}
+      physicsShape:
+      - - {x: 68, y: -109}
+        - {x: 128, y: -100}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -105}
+        - {x: -89, y: -110}
+        - {x: 50, y: -110}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8160c9cd32b31cb419ebf9526c5529d3
+      internalID: -430256592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_3
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35ca571d18892541bc38bba2d975527
+      internalID: 2217746826217154300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e78f86253dabb14eb3359a713f89c80
+      internalID: 830999236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 766
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: -128, y: 128}
+      physicsShape:
+      - - {x: 79, y: -108}
+        - {x: -67, y: 89}
+        - {x: -96, y: 96}
+        - {x: -128, y: 96}
+        - {x: -128, y: -128}
+        - {x: 96, y: -128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a69a0b04c155094291fc3753d509dde
+      internalID: 2098768537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7374e7ce42c484694b8575e5663788
+      internalID: 1329005654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fbfe0551df47b47947e260190d3881
+      internalID: 443263388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_33
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330fc3a4250fccd46ae49e836cb35cc7
+      internalID: 277932662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_34
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d9c1e9a1912134b8941c2eadc59f06
+      internalID: 818703065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_36
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf0f627fcfce7843b7a74b73876e7cd
+      internalID: -1735857524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_37
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1097224a8c8694387688730a87697a
+      internalID: -1248006787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_39
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: -128, y: 128}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63c8aeec4d89c041bc6749aa0b5ba22
+      internalID: 2145292590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_40
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e620a92f7a02cdd4caf27b87fa601257
+      internalID: -1809132918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_48
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -128, y: -128}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f440ce4ef02b24845932c3ac005b8916
+      internalID: -1081090557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_49
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -128}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79130316250d2d448b1ea7432fdf7303
+      internalID: -232810832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_53
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -128, y: -128}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6e3465315300742bdd2c52bcc2f8fa
+      internalID: -1909004286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CavernTileSet_54
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 128, y: -128}
+        - {x: 128, y: 128}
+        - {x: -128, y: 128}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2a70f96f009ee46adac656454aaeec
+      internalID: 769022449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8c9bf36588f02d7499efc026c044011b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      CavernTileSet_0: 1693920679128569622
+      CavernTileSet_1: 1093612967589571243
+      CavernTileSet_10: -1877727861
+      CavernTileSet_11: -288972551
+      CavernTileSet_12: -538816543
+      CavernTileSet_13: -1847980104
+      CavernTileSet_14: 830999236
+      CavernTileSet_15: 1437985967
+      CavernTileSet_16: -622772407
+      CavernTileSet_17: -419390405
+      CavernTileSet_18: -1454591866
+      CavernTileSet_19: -1532871311
+      CavernTileSet_2: -8061228555455966033
+      CavernTileSet_20: -2112230685
+      CavernTileSet_21: -1011983557
+      CavernTileSet_22: 1723241721
+      CavernTileSet_23: -1911517138
+      CavernTileSet_24: -1933444566
+      CavernTileSet_25: 1487565144
+      CavernTileSet_26: 1821279743
+      CavernTileSet_27: -479195937
+      CavernTileSet_28: 1074557021
+      CavernTileSet_29: -2026968221
+      CavernTileSet_3: 2217746826217154300
+      CavernTileSet_30: 2098768537
+      CavernTileSet_31: 1329005654
+      CavernTileSet_32: 443263388
+      CavernTileSet_33: 277932662
+      CavernTileSet_34: 818703065
+      CavernTileSet_35: -1622358627
+      CavernTileSet_36: -1735857524
+      CavernTileSet_37: -1248006787
+      CavernTileSet_38: -1111476871
+      CavernTileSet_39: 2145292590
+      CavernTileSet_4: 2519205658277416369
+      CavernTileSet_40: -1809132918
+      CavernTileSet_41: -1280477190
+      CavernTileSet_42: 106083226
+      CavernTileSet_43: -1281650185
+      CavernTileSet_44: 145734639
+      CavernTileSet_45: 1821795703
+      CavernTileSet_46: 1878190234
+      CavernTileSet_47: 1220773906
+      CavernTileSet_48: -1081090557
+      CavernTileSet_49: -232810832
+      CavernTileSet_5: 91682516
+      CavernTileSet_50: 2102448472
+      CavernTileSet_51: 1349217934
+      CavernTileSet_52: -430256592
+      CavernTileSet_53: -1909004286
+      CavernTileSet_54: 769022449
+      CavernTileSet_6: -710844475
+      CavernTileSet_7: 231441694
+      CavernTileSet_8: -1073994186
+      CavernTileSet_9: 1891309080
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
