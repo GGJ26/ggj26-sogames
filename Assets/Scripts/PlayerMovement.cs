@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _isGrounded;
     private bool _wasGrounded;
 
+    public ZoneTracker2D zoneTracker2D;
+
     private void Awake()
     {
         instance = this;

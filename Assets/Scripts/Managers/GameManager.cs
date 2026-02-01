@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
 
     private static GameManager _instance;
+
+    public GameObject gameOverScreen;
     public static GameManager Instance
     {
         // Create the singleton when a script calls GameManager.Instance
@@ -21,6 +23,12 @@ public class GameManager : MonoBehaviour
             }
             return _instance;
         }
+    }
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     void Awake()
