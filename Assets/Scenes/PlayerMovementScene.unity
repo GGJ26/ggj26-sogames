@@ -1379,10 +1379,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2300033879924911928, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
+      propertyPath: moveSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3011583343842116501, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4806308826112966209, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: fe7669e0443a28149a98c00609d9235e, type: 2}
     - target: {fileID: 7651934980445273792, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
