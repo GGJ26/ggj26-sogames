@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 0.15f;
     public LayerMask groundMask;
 
+    [Header("Grounding")]
+    [Tooltip("Durée pendant laquelle on ignore le sol après un jump (évite le glitch 1-2 frames).")]
+    public float groundIgnoreAfterJump = 0.08f;
+    private float _groundLockUntil = -1f;
+
     [Header("Gravity Modes")]
     [Tooltip("Gravité de base (valeur positive). Le signe est géré automatiquement pour l'inversion.")]
     public float baseGravityScale = 1.5f;
@@ -35,9 +40,14 @@ public class PlayerMovement : MonoBehaviour
 
     // Cache pour reset
     private float _defaultBaseGravityScale;
-    private Vector3 _groundCheckLocalDefault;
 
-    public Transform container;
+    [Header("Visual / Anim")]
+    public Transform container;                // Parent que tu retournes (flip X/Y)
+    public PlayerAnimator playerAnimator;
+
+    // Grounded cache (pour éviter plusieurs Overlap par frame)
+    private bool _isGrounded;
+    private bool _wasGrounded;
 
     private void Awake()
     {
@@ -46,9 +56,11 @@ public class PlayerMovement : MonoBehaviour
         if (rb == null)
             rb = GetComponent<Rigidbody2D>();
 
-        // valeurs par défaut
         _defaultBaseGravityScale = baseGravityScale;
-        if (groundCheck != null) _groundCheckLocalDefault = groundCheck.localPosition;
+
+        // Init grounded states
+        _isGrounded = IsGroundedInternal();
+        _wasGrounded = _isGrounded;
     }
 
     #region Adding Listeners
@@ -95,8 +107,6 @@ public class PlayerMovement : MonoBehaviour
     private void HandleLowGravityJump()
     {
         _slowFallEnabled = true;
-        // On ne change PAS la gravité de montée : baseGravityScale reste pareil.
-        // On modifie uniquement le "fall multiplier" dans FixedUpdate.
     }
 
     // 2) Gravité inversée
@@ -104,8 +114,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _invertGravityEnabled = true;
 
-        // Retournement vertical du transform
-        if (groundCheck != null)
+        // Retournement vertical du transform (visuel)
+        if (container != null)
         {
             var s = container.localScale;
             s.y = -Mathf.Abs(s.y);
@@ -125,10 +135,13 @@ public class PlayerMovement : MonoBehaviour
 
         baseGravityScale = _defaultBaseGravityScale;
 
-        // Retournement vertical du transform
-        var s = container.localScale;
-        s.y = Mathf.Abs(s.y);
-        container.localScale = s;
+        // Reset flip vertical
+        if (container != null)
+        {
+            var s = container.localScale;
+            s.y = Mathf.Abs(s.y);
+            container.localScale = s;
+        }
 
         // Reset gravité effective (sera recalculée en FixedUpdate)
         if (rb != null)
@@ -139,61 +152,111 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rb == null) return;
 
-        // Mouvement horizontal
+        // --- Grounded cache ---
+        _wasGrounded = _isGrounded;
+        _isGrounded = IsGroundedInternal();
+
+        // Transitions d'anim basées sur grounded (plus fiable que timers)
+        if (!_wasGrounded && _isGrounded)
+        {
+            // atterrissage
+            if (_moveX != 0f) playerAnimator?.SetRun();
+            else playerAnimator?.SetIdle();
+        }
+        else if (_wasGrounded && !_isGrounded)
+        {
+            // départ en l'air (marche aussi si tu tombes d'une plateforme)
+            playerAnimator?.SetJump();
+        }
+
+        // --- Mouvement horizontal ---
         var v = rb.linearVelocity;
         v.x = _moveX * moveSpeed;
         rb.linearVelocity = v;
 
-        // ---- Gravité effective ----
-        // Base gravité (signe géré par inversion)
+        // --- Gravité effective ---
         float signedBase = Mathf.Abs(baseGravityScale) * (_invertGravityEnabled ? -1f : 1f);
 
-        // Déterminer si on "tombe" dans le sens de la gravité
-        // - gravité normale (signedBase > 0) : tombe si velY < 0
-        // - gravité inversée (signedBase < 0) : tombe (vers le haut) si velY > 0
-        bool fallingWithGravity = signedBase > 0f ? (rb.linearVelocity.y < 0f)
-                                                  : (rb.linearVelocity.y > 0f);
+        bool fallingWithGravity =
+            signedBase > 0f ? (rb.linearVelocity.y < 0f)  // gravité normale => tombe si velY < 0
+                            : (rb.linearVelocity.y > 0f); // gravité inversée => tombe (vers le haut) si velY > 0
 
         float fallMult = _slowFallEnabled ? fallMultiplierFloat : fallMultiplierNormal;
 
-        // Appliquer : même montée, chute modifiée
+        // Appliquer : montée inchangée, chute modifiée
         rb.gravityScale = fallingWithGravity ? (signedBase * fallMult) : signedBase;
     }
 
-    public void MoveLeft() {
+    public void MoveLeft()
+    {
         _moveX = -1f;
-        var s = container.localScale;
-        s.x = -Mathf.Abs(s.x);
-        container.localScale = s;
+
+        // flip horizontal
+        if (container != null)
+        {
+            var s = container.localScale;
+            s.x = -Mathf.Abs(s.x);
+            container.localScale = s;
+        }
+
+        if (_isGrounded)
+            playerAnimator?.SetRun();
     }
-    public void MoveRight() {
+
+    public void MoveRight()
+    {
         _moveX = 1f;
-        var s = container.localScale;
-        s.x = Mathf.Abs(s.x);
-        container.localScale = s;
+
+        // flip horizontal
+        if (container != null)
+        {
+            var s = container.localScale;
+            s.x = Mathf.Abs(s.x);
+            container.localScale = s;
+        }
+
+        if (_isGrounded)
+            playerAnimator?.SetRun();
     }
-    public void StopMove()  => _moveX = 0f;
+
+    public void StopMove()
+    {
+        _moveX = 0f;
+
+        if (_isGrounded)
+            playerAnimator?.SetIdle();
+    }
 
     public void TryJump()
     {
         if (rb == null) return;
-        if (!IsGrounded()) return;
+        if (!_isGrounded) return;
 
         // Reset de la vitesse verticale pour un saut constant
         var v = rb.linearVelocity;
         v.y = 0f;
         rb.linearVelocity = v;
 
-        // Saut "contre" la gravité :
-        // gravité normale => jump vers le haut
-        // gravité inversée => jump vers le bas
+        // Saut "contre" la gravité
         Vector2 jumpDir = (_invertGravityEnabled ? Vector2.down : Vector2.up);
-
         rb.AddForce(jumpDir * jumpForce, ForceMode2D.Impulse);
+
+        // IMPORTANT: ignore le sol pendant quelques ms pour éviter le glitch de départ
+        _groundLockUntil = Time.time + groundIgnoreAfterJump;
+        _isGrounded = false;
+
+        playerAnimator?.SetJump();
     }
 
-    private bool IsGrounded()
+    // Public si tu veux l'utiliser ailleurs
+    public bool IsGrounded() => _isGrounded;
+
+    private bool IsGroundedInternal()
     {
+        // Lock anti-glitch juste après jump
+        if (Time.time < _groundLockUntil)
+            return false;
+
         if (groundCheck == null) return false;
 
         return Physics2D.OverlapCircle(
