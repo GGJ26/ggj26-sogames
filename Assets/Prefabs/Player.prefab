@@ -244,12 +244,12 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+  groundIgnoreAfterJump: 0.08
   baseGravityScale: 1.5
   fallMultiplierNormal: 1.5
   fallMultiplierFloat: 0.2
   container: {fileID: 7651934980445273792}
   playerAnimator: {fileID: 5095591064976396123}
-  runSpeedForFullAnim: 6
 --- !u!1 &7943732443685233769
 GameObject:
   m_ObjectHideFlags: 0
