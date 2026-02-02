@@ -16,7 +16,9 @@ public class PlayerInputController : MonoBehaviour
         _controls.Player.Move.performed += ctx =>
         {
             _move = ctx.ReadValue<Vector2>();
-            ApplyHorizontalMove(_move.x);
+            PlayerMovement.instance.MoveInput = _move;
+
+            /* ApplyHorizontalMove(_move.x); */
         };
 
         _controls.Player.Move.canceled += _ =>

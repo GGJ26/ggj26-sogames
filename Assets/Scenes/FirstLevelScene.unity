@@ -101582,6 +101582,20 @@ PrefabInstance:
     - target: {fileID: 2300033879924911928, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
       propertyPath: fallMultiplierNormal
       value: 3
+      propertyPath: runAccelAmount
+      value: 8.333333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300033879924911928, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
+      propertyPath: runAcceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300033879924911928, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
+      propertyPath: runDeccelAmount
+      value: 20.833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300033879924911928, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
+      propertyPath: runDecceleration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3011583343842116501, guid: 40ff1078eb2449045b0a55b2e7bc9a69, type: 3}
       propertyPath: m_Name

@@ -11,8 +11,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Move")]
     public float moveSpeed = 6f;
 
+    [Header("Test")]
+    public float testSpeed = 60f;
+
     [Header("Jump")]
-    public float jumpForce = 8f;
+    public float jumpForceLegacy = 8f;
     public Transform groundCheck;
     public float groundCheckRadius = 0.15f;
     public LayerMask groundMask;
@@ -27,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float baseGravityScale = 1.5f;
 
     [Tooltip("Multiplier de gravité quand on tombe (normal). 1 = normal, >1 chute plus rapide.")]
-    public float fallMultiplierNormal = 1.5f;
+    public float fallMultiplierNormal = 1.6f;
 
     [Tooltip("Multiplier de gravité quand on tombe (flottant). <1 = chute plus lente.")]
     public float fallMultiplierFloat = 0.2f;
@@ -49,6 +52,59 @@ public class PlayerMovement : MonoBehaviour
     private bool _isGrounded;
     private bool _wasGrounded;
 
+    private Vector2 _moveInput;
+
+    public Vector2 MoveInput
+    {
+        get => _moveInput;
+        set
+        {
+            _moveInput = value;
+        }
+    }
+
+    [Header("Gravity")]
+    public float fallGravityMult;
+	public float maxFallSpeed;
+
+	[HideInInspector] public float gravityStrength;
+	[HideInInspector] public float gravityScale;
+    [Space(5)]
+
+    [Header("Run")]
+	public float runMaxSpeed; //Target speed we want the player to reach.
+	public float runAcceleration; //The speed at which our player accelerates to max speed, can be set to runMaxSpeed for instant acceleration down to 0 for none at all
+	[HideInInspector] public float runAccelAmount; //The actual force (multiplied with speedDiff) applied to the player.
+	public float runDecceleration; //The speed at which our player decelerates from their current speed, can be set to runMaxSpeed for instant deceleration down to 0 for none at all
+	[HideInInspector] public float runDeccelAmount; //Actual force (multiplied with speedDiff) applied to the player .
+	[Space(5)]
+	[Range(0f, 1)] public float accelInAir; //Multipliers applied to acceleration rate when airborne.
+	[Range(0f, 1)] public float deccelInAir;
+	[Space(5)]
+	public bool doConserveMomentum = true;
+
+    [Header("Jump2")]
+    public float jumpHeight; //Height of the player's jump
+	public float jumpTimeToApex; //Time between applying the jump force and reaching the desired jump height. These values also control the player's gravity and jump force.
+	[HideInInspector] public float jumpForce; //The actual force applied (upwards) to the player when they jump.
+	public float jumpCutGravityMult; //Multiplier to increase gravity if the player releases thje jump button while still jumping
+	[Range(0f, 1)] public float jumpHangGravityMult; //Reduces gravity while close to the apex (desired max height) of the jump
+	public float jumpHangTimeThreshold; //Speeds (close to 0) where the player will experience extra "jump hang". The player's velocity.y is closest to 0 at the jump's apex (think of the gradient of a parabola or quadratic function)
+	[Space(0.5f)]
+	public float jumpHangAccelerationMult = 5f;
+	public float jumpHangMaxSpeedMult;
+    [Range(0.01f, 0.5f)] public float coyoteTime; // Time we have to trigger a jump when falling from a platform
+    [Range(0.01f, 0.5f)] public float jumpInputBufferTime; // To adjust jump player input accuraty 
+    [Range(0.01f, 0.5f)] public float testrange; // To adjust jump player input accuraty 
+
+    private float _lastOnGroundTime;
+    private float _lastPressedJumpTime;
+
+    private bool _isJumping;
+	private bool _isJumpFalling;
+
+    public bool test = true;
+
     private void Awake()
     {
         instance = this;
@@ -66,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
     #region Adding Listeners
     private void OnEnable()
     {
-        StartCoroutine(SetMaskChanged());
+        /* StartCoroutine(SetMaskChanged()); */
     }
 
     private IEnumerator SetMaskChanged()
@@ -169,12 +225,14 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator?.SetJump();
         }
 
-        // --- Mouvement horizontal ---
+        /* // --- Mouvement horizontal ---
         var v = rb.linearVelocity;
         v.x = _moveX * moveSpeed;
-        rb.linearVelocity = v;
+        rb.linearVelocity = v; */
 
-        // --- Gravité effective ---
+        Run(1);
+
+        /* // --- Gravité effective ---
         float signedBase = Mathf.Abs(baseGravityScale) * (_invertGravityEnabled ? -1f : 1f);
 
         bool fallingWithGravity =
@@ -184,7 +242,7 @@ public class PlayerMovement : MonoBehaviour
         float fallMult = _slowFallEnabled ? fallMultiplierFloat : fallMultiplierNormal;
 
         // Appliquer : montée inchangée, chute modifiée
-        rb.gravityScale = fallingWithGravity ? (signedBase * fallMult) : signedBase;
+        rb.gravityScale = fallingWithGravity ? (signedBase * fallMult) : signedBase; */
     }
 
     public void MoveLeft()
@@ -232,20 +290,24 @@ public class PlayerMovement : MonoBehaviour
         if (rb == null) return;
         if (!_isGrounded) return;
 
-        // Reset de la vitesse verticale pour un saut constant
+        _lastPressedJumpTime = jumpInputBufferTime;
+        Debug.Log("trigger jump " + testrange);
+        playerAnimator?.SetJump();
+
+        /* // Reset de la vitesse verticale pour un saut constant
         var v = rb.linearVelocity;
         v.y = 0f;
         rb.linearVelocity = v;
 
         // Saut "contre" la gravité
         Vector2 jumpDir = (_invertGravityEnabled ? Vector2.down : Vector2.up);
-        rb.AddForce(jumpDir * jumpForce, ForceMode2D.Impulse);
+        rb.AddForce(jumpDir * jumpForceLegacy, ForceMode2D.Impulse);
 
         // IMPORTANT: ignore le sol pendant quelques ms pour éviter le glitch de départ
         _groundLockUntil = Time.time + groundIgnoreAfterJump;
         _isGrounded = false;
 
-        playerAnimator?.SetJump();
+        playerAnimator?.SetJump(); */
     }
 
     // Public si tu veux l'utiliser ailleurs
@@ -259,13 +321,152 @@ public class PlayerMovement : MonoBehaviour
 
         if (groundCheck == null) return false;
 
-        return Physics2D.OverlapCircle(
+        bool isGrounded = Physics2D.OverlapCircle(
             groundCheck.position,
             groundCheckRadius,
             groundMask
         );
+
+        if(_lastOnGroundTime < -0.1f)
+        {
+            _lastOnGroundTime = coyoteTime;
+        }
+
+        return isGrounded;
     }
 
+    private void Jump()
+	{
+		//Ensures we can't call Jump multiple times from one press
+		_lastPressedJumpTime = 0;
+		_lastOnGroundTime = 0;
+        
+		float force = jumpForce;
+		if (rb.linearVelocity.y < 0)
+			force -= rb.linearVelocity.y;
+        Debug.Log("jump : " + (_invertGravityEnabled ? Vector2.down * force : Vector2.up * force));
+		rb.AddForce(_invertGravityEnabled ? Vector2.down * 1000 : Vector2.up * force, ForceMode2D.Impulse);
+	}
+
+    private bool CanJump()
+    {
+        Debug.Log("<color=yellow> CanJump <color> last ");
+		return _lastOnGroundTime > 0 && !_isJumping;
+    }
+
+    private void Run(float lerpAmount)
+	{
+		float targetSpeed = _moveInput.x * runMaxSpeed;
+		targetSpeed = Mathf.Lerp(rb.linearVelocity.x, targetSpeed, lerpAmount);
+
+		// Calculate AccelRate
+		float accelRate;
+
+		if (_lastOnGroundTime > 0)
+			accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? runAccelAmount : runDeccelAmount;
+		else
+			accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? runAccelAmount * accelInAir : runDeccelAmount * deccelInAir;
+
+		// Bonus Jump Apex Acceleration
+		//Increase are acceleration and maxSpeed when at the apex of their jump, makes the jump feel a bit more bouncy, responsive and natural
+		if ((_isJumping || _isJumpFalling) && Mathf.Abs(rb.linearVelocity.y) < jumpHangTimeThreshold)
+		{
+			accelRate *= jumpHangAccelerationMult;
+			targetSpeed *= jumpHangMaxSpeedMult;
+		}
+
+		// Conserve Momentum
+		if(
+            doConserveMomentum && Mathf.Abs(rb.linearVelocity.x) > Mathf.Abs(targetSpeed) 
+            && Mathf.Sign(rb.linearVelocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f 
+            && _lastOnGroundTime < 0)
+		{
+			accelRate = 0; 
+		}
+
+		float speedDif = targetSpeed - rb.linearVelocity.x;
+
+		float movement = speedDif * accelRate;
+
+		rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
+	}
+
+    public void SetGravityScale(float scale)
+    {
+        if(_invertGravityEnabled) scale *= -1;
+
+        rb.gravityScale = scale;
+    }
+
+    void Start()
+    {
+        SetGravityScale(1);
+    }
+
+    void Update()
+    {
+        _lastOnGroundTime -= Time.deltaTime;
+
+        Debug.Log(Time.deltaTime);
+        Debug.Log(_lastPressedJumpTime);
+
+        if (_isJumping && rb.linearVelocity.y < 0)
+		{
+            Debug.Log("<color=red>Jump</color>");
+			_isJumping = false;
+
+			_isJumpFalling = true;
+		}
+
+        if (CanJump() && _lastPressedJumpTime > 0)
+        {
+            Debug.Log("<color=orange>Jump</color>");
+            _isJumping = true;
+            /* _isJumpCut = false; */
+            _isJumpFalling = false;
+            Jump();
+        }
+
+        // Gravity
+        else if ((_isJumping || _isJumpFalling) && Mathf.Abs(rb.linearVelocity.y) < jumpHangTimeThreshold)
+        {
+            SetGravityScale(gravityScale * jumpHangGravityMult);
+        }
+        else if (rb.linearVelocity.y < 0)
+        {
+            //Higher gravity if falling
+            SetGravityScale(gravityScale * fallGravityMult);
+            //Caps maximum fall speed, TODO check what's the current gravity scale
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, _invertGravityEnabled ? maxFallSpeed : -maxFallSpeed));
+        }
+        else
+        {
+            //Default gravity if standing on a platform or moving upwards
+			SetGravityScale(gravityScale);
+        }
+
+        _lastPressedJumpTime -= Time.deltaTime;
+    }
+
+    // Init at the script loading or inspector changing
+    void OnValidate()
+    {
+		gravityStrength = -(2 * jumpHeight) / (jumpTimeToApex * jumpTimeToApex);
+
+		gravityScale = gravityStrength / Physics2D.gravity.y;
+
+		//Calculate are run acceleration & deceleration forces using formula: amount = ((1 / Time.fixedDeltaTime) * acceleration) / runMaxSpeed
+		runAccelAmount = 50 * runAcceleration / runMaxSpeed;
+		runDeccelAmount = 50 * runDecceleration / runMaxSpeed;
+
+		//Calculate jumpForce using the formula (initialJumpVelocity = gravity * timeToJumpApex)
+		jumpForce = Mathf.Abs(gravityStrength) * jumpTimeToApex;
+
+		#region Variable Ranges
+		runAcceleration = Mathf.Clamp(runAcceleration, 0.01f, runMaxSpeed);
+		runDecceleration = Mathf.Clamp(runDecceleration, 0.01f, runMaxSpeed);
+		#endregion
+	}
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {

@@ -21,7 +21,7 @@
                     "id": "43190841-469e-421c-a182-d48e04621003",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -57,7 +57,7 @@
                     "name": "2D Vector",
                     "id": "4160e300-16f8-43db-a3f2-a70d786ff80a",
                     "path": "2DVector",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
@@ -67,7 +67,7 @@
                 {
                     "name": "up",
                     "id": "505fd410-ea9e-458c-a833-7ecf95488165",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -89,7 +89,7 @@
                 {
                     "name": "left",
                     "id": "e6fd6038-e54a-45f8-8170-522d87cab15b",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -210,5 +210,17 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "New Control Scheme",
+            "bindingGroup": "New Control Scheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

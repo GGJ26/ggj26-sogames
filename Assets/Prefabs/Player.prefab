@@ -87,7 +87,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fe7669e0443a28149a98c00609d9235e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -237,8 +237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   rb: {fileID: 4806308826112966209}
-  moveSpeed: 3
-  jumpForce: 9
+  moveSpeed: 12
+  testSpeed: 60
+  jumpForceLegacy: 8
   groundCheck: {fileID: 1617900488557762072}
   groundCheckRadius: 0.15
   groundMask:
@@ -250,6 +251,30 @@ MonoBehaviour:
   fallMultiplierFloat: 0.2
   container: {fileID: 7651934980445273792}
   playerAnimator: {fileID: 5095591064976396123}
+  fallGravityMult: 4
+  maxFallSpeed: 20
+  gravityStrength: -64
+  gravityScale: 6.523955
+  runMaxSpeed: 12
+  runAcceleration: 2
+  runAccelAmount: 8.333333
+  runDecceleration: 10
+  runDeccelAmount: 41.666668
+  accelInAir: 1
+  deccelInAir: 0
+  doConserveMomentum: 1
+  jumpHeight: 2
+  jumpTimeToApex: 0.25
+  jumpForce: 16
+  jumpCutGravityMult: 0
+  jumpHangGravityMult: 0
+  jumpHangTimeThreshold: 0
+  jumpHangAccelerationMult: 5
+  jumpHangMaxSpeedMult: 0
+  coyoteTime: 0.01
+  jumpInputBufferTime: 0.01
+  testrange: 0.01
+  test: 0
 --- !u!1 &7943732443685233769
 GameObject:
   m_ObjectHideFlags: 0
