@@ -267,7 +267,7 @@ MonoBehaviour:
   triggerPoint: {fileID: 5777701367984129818}
   moveSpeed: 4
   arriveDistance: 0.12
-  stopWhenTouchPlayer: 1
+  stopWhenTouchPlayer: 0
   playerTag: Player
   maskItem: {fileID: 0}
 --- !u!1 &2920674296213981789

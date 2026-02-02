@@ -13,7 +13,7 @@ public class EnemyPathChaser2D : MonoBehaviour
     public float arriveDistance = 0.12f;
 
     [Header("Behavior")]
-    public bool stopWhenTouchPlayer = true;
+    public bool stopWhenTouchPlayer = false;
     public string playerTag = "Player";
 
     private bool _touchedPlayer = false;
