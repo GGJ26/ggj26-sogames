@@ -15,6 +15,7 @@ public class MaskItem : ScriptableObject
     }
 
     public string id;
+    public string color;
     public Sprite sprite;
     public MaskEffectType maskEffectType;
 }

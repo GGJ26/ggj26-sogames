@@ -191,6 +191,7 @@ MonoBehaviour:
   fallMultiplierFloat: 0.2
   container: {fileID: 7651934980445273792}
   playerAnimator: {fileID: 5095591064976396123}
+  triggerPoint: {fileID: 7980389497630226969}
 --- !u!1 &7380422455286118325
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +430,7 @@ GameObject:
   - component: {fileID: 4331267281396673826}
   - component: {fileID: 2380204908535212417}
   - component: {fileID: 224348723335148549}
+  - component: {fileID: 7980389497630226969}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -533,6 +535,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &7980389497630226969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301418445060285211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36004d64f9534c3ee8ecc73ee983b627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerPoint
+  currentPoint: {fileID: 0}
+  lastPoint: {fileID: 0}
+  logOnEnter: 0
 --- !u!1 &8541425274406201447
 GameObject:
   m_ObjectHideFlags: 0

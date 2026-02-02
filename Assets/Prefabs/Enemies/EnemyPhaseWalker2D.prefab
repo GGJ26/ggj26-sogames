@@ -46,7 +46,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90120143087411903}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6527766210661344773}
   - component: {fileID: 6571726504312155676}
   - component: {fileID: 773047441390719377}
-  - component: {fileID: 2247750934134140294}
+  - component: {fileID: 5777701367984129818}
   m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
@@ -203,7 +203,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
---- !u!114 &2247750934134140294
+--- !u!114 &5777701367984129818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,10 +212,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 186153105180566223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3896f3bcd7e634b18d0c99240d9ac29, type: 3}
+  m_Script: {fileID: 11500000, guid: 36004d64f9534c3ee8ecc73ee983b627, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZoneTracker2D
-  CurrentZone: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerPoint
+  currentPoint: {fileID: 0}
+  lastPoint: {fileID: 0}
+  logOnEnter: 0
 --- !u!1 &1936218687125222058
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8405295353944821323}
-  - component: {fileID: 3461283115101704494}
+  - component: {fileID: 814572834393942663}
   m_Layer: 8
   m_Name: Controller
   m_TagString: Untagged
@@ -248,7 +250,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 565316767331181700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3461283115101704494
+--- !u!114 &814572834393942663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,35 +259,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936218687125222058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ab268a8ed1edd02883d9cbefe96816, type: 3}
+  m_Script: {fileID: 11500000, guid: ed91dbf6ce175c93bbbf7fe537fd9df8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyPhaseWalker2D
-  container: {fileID: 565316767331181700}
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPathChaser2D
+  path: {fileID: 0}
   rb: {fileID: 5640363802378935123}
-  playerTarget: {fileID: 0}
-  moveSpeed: 5
-  allowTeleport: 1
-  teleportReference: 1
-  teleportCooldown: 0.5
-  zeroVelocityOnTeleport: 1
-  groundCheck: {fileID: 518374263943146444}
-  wallCheck: {fileID: 8178185115201497891}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 128
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 128
-  groundCheckRadius: 0.1
-  wallDetectDistance: 0.5
-  jumpVelocity: 9
-  jumpForwardBoost: 2.5
-  jumpCooldown: 0.5
-  minBlockedSpeed: 0.5
-  commitAfterJumpTime: 0.3
-  debugOverlay: 1
-  allowAirControl: 0
-  zoneTracker2D: {fileID: 2247750934134140294}
+  triggerPoint: {fileID: 5777701367984129818}
+  moveSpeed: 4
+  arriveDistance: 0.12
+  stopWhenTouchPlayer: 1
+  playerTag: Player
+  maskItem: {fileID: 0}
 --- !u!1 &2920674296213981789
 GameObject:
   m_ObjectHideFlags: 0

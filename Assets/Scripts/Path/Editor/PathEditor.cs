@@ -405,8 +405,14 @@ public class PathEditor : Editor
             Vector3 pos = a.transform.position;
             float size = HandleUtility.GetHandleSize(pos) * AnchorDrawScale;
 
-            Handles.color = ColorForType(a.segmentType);
+            // Fond de l'ancre (fixe, non vert)
+            Handles.color = new Color(0.15f, 0.15f, 0.15f, 1f); // gris foncé (change à ton goût)
             Handles.DrawSolidDisc(pos, Vector3.forward, size);
+
+            // Contour (couleur selon le type)
+            Handles.color = ColorForType(a.segmentType);
+            Handles.DrawWireDisc(pos, Vector3.forward, size * 1.05f);
+
 
             // outline if tool-selected anchor
             if (_selectedAnchor == a.transform)

@@ -45,11 +45,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform container;                // Parent que tu retournes (flip X/Y)
     public PlayerAnimator playerAnimator;
 
+    public TriggerPoint triggerPoint;
+
     // Grounded cache (pour éviter plusieurs Overlap par frame)
     private bool _isGrounded;
     private bool _wasGrounded;
-
-    //public ZoneTracker2D zoneTracker2D;
 
     private void Awake()
     {
