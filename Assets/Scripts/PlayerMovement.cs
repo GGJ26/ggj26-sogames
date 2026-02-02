@@ -210,7 +210,6 @@ public class PlayerMovement : MonoBehaviour
 
         // --- Grounded cache ---
         _wasGrounded = _isGrounded;
-        _isGrounded = IsGroundedInternal();
 
         // Transitions d'anim basées sur grounded (plus fiable que timers)
         if (!_wasGrounded && _isGrounded)
@@ -327,9 +326,9 @@ public class PlayerMovement : MonoBehaviour
             groundMask
         );
 
-        if(_lastOnGroundTime < -0.1f)
+        if(isGrounded && _lastOnGroundTime < -0.1f)
         {
-            _lastOnGroundTime = coyoteTime;
+            _lastOnGroundTime = 1;
         }
 
         return isGrounded;
@@ -350,8 +349,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool CanJump()
     {
-        Debug.Log("<color=yellow> CanJump <color> last ");
-		return _lastOnGroundTime > 0 && !_isJumping;
+        Debug.Log($"<color=yellow> CanJump </color> {_lastOnGroundTime}");
+
+        return _lastOnGroundTime > 0 && !_isJumping;
     }
 
     private void Run(float lerpAmount)
@@ -406,6 +406,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         _lastOnGroundTime -= Time.deltaTime;
+
+        _isGrounded = IsGroundedInternal();
 
         Debug.Log(Time.deltaTime);
         Debug.Log(_lastPressedJumpTime);

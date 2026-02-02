@@ -253,8 +253,8 @@ MonoBehaviour:
   playerAnimator: {fileID: 5095591064976396123}
   fallGravityMult: 4
   maxFallSpeed: 20
-  gravityStrength: -64
-  gravityScale: 6.523955
+  gravityStrength: -5
+  gravityScale: 0.50968397
   runMaxSpeed: 12
   runAcceleration: 2
   runAccelAmount: 8.333333
@@ -263,15 +263,15 @@ MonoBehaviour:
   accelInAir: 1
   deccelInAir: 0
   doConserveMomentum: 1
-  jumpHeight: 2
-  jumpTimeToApex: 0.25
-  jumpForce: 16
+  jumpHeight: 10
+  jumpTimeToApex: 2
+  jumpForce: 10
   jumpCutGravityMult: 0
   jumpHangGravityMult: 0
   jumpHangTimeThreshold: 0
   jumpHangAccelerationMult: 5
   jumpHangMaxSpeedMult: 0
-  coyoteTime: 0.01
+  coyoteTime: 0.5
   jumpInputBufferTime: 0.01
   testrange: 0.01
   test: 0
