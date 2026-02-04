@@ -153,6 +153,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a334feed2c30246ccbda5822906b97ac, type: 2}
   - {fileID: 11400000, guid: 9164f068e058c9cc08a47febc37d3510, type: 2}
   - {fileID: 11400000, guid: 3ac670e4afc99f2348d3479f037f2fc5, type: 2}
+  maskAndDaemonInstances: []
 --- !u!4 &23898214
 Transform:
   m_ObjectHideFlags: 0
@@ -318,50 +319,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147208285}
   m_CullTransparentMesh: 1
---- !u!1 &193869729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 193869731}
-  - component: {fileID: 193869730}
-  m_Layer: 0
-  m_Name: AmbPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &193869730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193869729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173862ac09ce88948a5857a581fd1e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayAmbSound
---- !u!4 &193869731
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193869729}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49862, y: 3.95549, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278864810
 GameObject:
   m_ObjectHideFlags: 0
@@ -100511,97 +100468,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &895797574
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 895797576}
-  - component: {fileID: 895797575}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &895797575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895797574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbc5a7920697074d9d221f3955aff4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  soundEffects:
-  - name: step-001
-    clip: {fileID: 8300000, guid: b121fa62d4ebb534da3e412ab3079a17, type: 3}
-    volume: 1
-  - name: step-002
-    clip: {fileID: 8300000, guid: 845c261b844e4d14d871395afb7879cc, type: 3}
-    volume: 1
-  - name: step-003
-    clip: {fileID: 8300000, guid: 087f306233bae6a4aba1a94709ce0c13, type: 3}
-    volume: 1
-  - name: step-004
-    clip: {fileID: 8300000, guid: 8c3d8ccb7a7cd014e8c0ceb4356b0508, type: 3}
-    volume: 1
-  - name: step-005
-    clip: {fileID: 8300000, guid: 68abbc61bba10a54682729ba58f0290f, type: 3}
-    volume: 1
-  - name: step-006
-    clip: {fileID: 8300000, guid: b5451004e7f187d41b3bb3d21e68d3dd, type: 3}
-    volume: 1
-  - name: step-007
-    clip: {fileID: 8300000, guid: 9180dd7d9abf70a4ba629caf9a6f5b3d, type: 3}
-    volume: 1
-  - name: step-008
-    clip: {fileID: 8300000, guid: 13c35d92ef30d7a47be3287b5deff319, type: 3}
-    volume: 1
-  - name: Amb
-    clip: {fileID: 8300000, guid: 433f522530844af49a5ca23f1de06a3a, type: 3}
-    volume: 1
-  - name: mask3
-    clip: {fileID: 8300000, guid: ac00de20812673e4eb6ac19ad2b7e16f, type: 3}
-    volume: 1
-  - name: mask1
-    clip: {fileID: 8300000, guid: 6c10872dcffc4b64ea630e1b383d805e, type: 3}
-    volume: 1
-  - name: mask2
-    clip: {fileID: 8300000, guid: 1c6578262b3cf0d4da9f6222a0db6560, type: 3}
-    volume: 1
-  - name: Music
-    clip: {fileID: 8300000, guid: 94ba99d4ba9d03b459f6b3c18a3c74c1, type: 3}
-    volume: 0.596
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-  poolSize: 15
---- !u!4 &895797576
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895797574}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.73361, y: 0.696, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922902685
 GameObject:
   m_ObjectHideFlags: 0
@@ -100677,50 +100543,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1058243504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1058243506}
-  - component: {fileID: 1058243505}
-  m_Layer: 0
-  m_Name: MusicPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1058243505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058243504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6bf47c02c3e34045a5db53fcc138cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayMusicSound
---- !u!4 &1058243506
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058243504}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49862, y: 3.95549, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102185,7 +102007,4 @@ SceneRoots:
   - {fileID: 1287478302}
   - {fileID: 319553698}
   - {fileID: 2122611898}
-  - {fileID: 895797576}
-  - {fileID: 193869731}
-  - {fileID: 1058243506}
   - {fileID: 1916335049}
