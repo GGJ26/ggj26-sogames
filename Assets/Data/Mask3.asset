@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Mask3
   m_EditorClassIdentifier: Assembly-CSharp::MaskItem
   id: mask3
-  sprite: {fileID: -5313610575530363566, guid: 8a6e011dc37dc80d78ceeecf6673679c, type: 3}
+  color: Red
+  sprite: {fileID: 1323982653382754725, guid: 394b5646aab74da6fbb2fd5af600a86c, type: 3}
+  maskEffectType: 3

@@ -27,9 +27,9 @@ public class PlayerInputController : MonoBehaviour
 
         _controls.Player.Jump.performed += _ => TryJump();
 
-        _controls.Player.Mask1.performed += _ => MaskManager.instance.SetMask("mask1");
-        _controls.Player.Mask2.performed += _ => MaskManager.instance.SetMask("mask2");
-        _controls.Player.Mask3.performed += _ => MaskManager.instance.SetMask("mask3");
+        _controls.Player.Mask1.performed += _ => MaskManager.instance.SetMask("mask1"); // J - Jaune
+        _controls.Player.Mask2.performed += _ => MaskManager.instance.SetMask("mask2"); // K - Bleu
+        _controls.Player.Mask3.performed += _ => MaskManager.instance.SetMask("mask3"); // L - Rouge
     }
 
     private void ApplyHorizontalMove(float x)

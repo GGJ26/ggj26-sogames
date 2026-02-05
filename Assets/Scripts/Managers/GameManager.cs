@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
 
     private static GameManager _instance;
+
+    public GameObject gameOverScreen;
     public static GameManager Instance
     {
         // Create the singleton when a script calls GameManager.Instance
@@ -21,6 +23,12 @@ public class GameManager : MonoBehaviour
             }
             return _instance;
         }
+    }
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     void Awake()
@@ -40,16 +48,15 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Time.timeScale = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        Time.timeScale = 1;
     }
 
-        public void QuitApplication()
+    public void QuitApplication()
     {
         #if UNITY_EDITOR
                 EditorApplication.ExitPlaymode();

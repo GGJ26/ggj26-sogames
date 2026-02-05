@@ -1,0 +1,538 @@
+fileFormatVersion: 2
+guid: f083bfa486666e0dea1a53b2fec239a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7404714979795360459
+    second: DEMONROUGE_0
+  - first:
+      213: 3846158702758775053
+    second: DEMONROUGE_1
+  - first:
+      213: -3815828214777827004
+    second: DEMONROUGE_2
+  - first:
+      213: 2311026448066672926
+    second: DEMONROUGE_3
+  - first:
+      213: 6961196768801700698
+    second: DEMONROUGE_4
+  - first:
+      213: 1112383164608726040
+    second: DEMONROUGE_5
+  - first:
+      213: -1951089409418478646
+    second: DEMONROUGE_6
+  - first:
+      213: -6368030028601712991
+    second: DEMONROUGE_7
+  - first:
+      213: 754578876557027038
+    second: DEMONROUGE_8
+  - first:
+      213: -3033167397928854590
+    second: DEMONROUGE_9
+  - first:
+      213: -1964378526438806837
+    second: DEMONROUGE_10
+  - first:
+      213: 6541020440110881254
+    second: DEMONROUGE_11
+  - first:
+      213: -3966160888082266588
+    second: DEMONROUGE_12
+  - first:
+      213: 716450625037448637
+    second: DEMONROUGE_13
+  - first:
+      213: -39215432453083215
+    second: DEMONROUGE_14
+  - first:
+      213: -1667826886297007590
+    second: DEMONROUGE_15
+  - first:
+      213: 3141327293031638590
+    second: DEMONROUGE_16
+  - first:
+      213: -613338491226141039
+    second: DEMONROUGE_17
+  - first:
+      213: 4872392283971923789
+    second: DEMONROUGE_18
+  - first:
+      213: -4947108289418594047
+    second: DEMONROUGE_19
+  - first:
+      213: -3593863563620280216
+    second: DEMONROUGE_20
+  - first:
+      213: -4287424028942475314
+    second: DEMONROUGE_21
+  - first:
+      213: 7013568684103709196
+    second: DEMONROUGE_22
+  - first:
+      213: 4469049658170928779
+    second: DEMONROUGE_23
+  - first:
+      213: -6128703323767862590
+    second: DEMONROUGE_24
+  - first:
+      213: 9056692073755671393
+    second: DEMONROUGE_25
+  - first:
+      213: -872010243934442153
+    second: DEMONROUGE_26
+  - first:
+      213: 3568822291152674042
+    second: DEMONROUGE_27
+  - first:
+      213: -6458137414078437072
+    second: DEMONROUGE_28
+  - first:
+      213: -6282901845116486192
+    second: DEMONROUGE_29
+  - first:
+      213: -286106559015731810
+    second: DEMONROUGE_30
+  - first:
+      213: -634274941443795983
+    second: DEMONROUGE_31
+  - first:
+      213: 6505453399987732276
+    second: DEMONROUGE_32
+  - first:
+      213: 8832199846752571027
+    second: DEMONROUGE_33
+  - first:
+      213: -6180479127838454624
+    second: DEMONROUGE_34
+  - first:
+      213: -5607667935988809484
+    second: DEMONROUGE_35
+  - first:
+      213: 8554683938867467233
+    second: DEMONROUGE_36
+  - first:
+      213: 8430186124151771945
+    second: DEMONROUGE_37
+  - first:
+      213: 5030490403778317613
+    second: DEMONROUGE_38
+  - first:
+      213: 5175139215446552469
+    second: DEMONROUGE_39
+  - first:
+      213: -7130442932176580153
+    second: DEMONROUGE_40
+  - first:
+      213: -4733941307566135701
+    second: DEMONROUGE_41
+  - first:
+      213: -4340204027365944860
+    second: DEMONROUGE_42
+  - first:
+      213: -7282002996348457358
+    second: DEMONROUGE_43
+  - first:
+      213: -835734239623946995
+    second: DEMONROUGE_44
+  - first:
+      213: -4633517825926046845
+    second: DEMONROUGE_45
+  - first:
+      213: 8407260154149837459
+    second: DEMONROUGE_46
+  - first:
+      213: -5168335344656250442
+    second: DEMONROUGE_47
+  - first:
+      213: -7386319368384123929
+    second: DEMONROUGE_48
+  - first:
+      213: 549382442979154670
+    second: DEMONROUGE_49
+  - first:
+      213: 2893334212213466409
+    second: DEMONROUGE_50
+  - first:
+      213: 792817032264312475
+    second: DEMONROUGE_51
+  - first:
+      213: -8549767399105439882
+    second: DEMONROUGE_52
+  - first:
+      213: -3639122061548015113
+    second: DEMONROUGE_53
+  - first:
+      213: -6054373810756458931
+    second: DEMONROUGE_54
+  - first:
+      213: -277569037478652625
+    second: DEMONROUGE_55
+  - first:
+      213: 7417175019283655772
+    second: DEMONROUGE_56
+  - first:
+      213: -6136579941825573917
+    second: DEMONROUGE_57
+  - first:
+      213: 8964037832198112994
+    second: DEMONROUGE_58
+  - first:
+      213: 2634389723371036650
+    second: DEMONROUGE_59
+  - first:
+      213: 6782882625036154951
+    second: DEMONROUGE_60
+  - first:
+      213: -1295553030836854555
+    second: DEMONROUGE_61
+  - first:
+      213: 854578757123231674
+    second: DEMONROUGE_62
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DEMONROUGE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 535a84e25fa2d3990800000000000000
+      internalID: -7404714979795360459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09c6bb56fc406530800000000000000
+      internalID: 3846158702758775053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441314ea4747b0bc0800000000000000
+      internalID: -3815828214777827004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19fb876f4a621020800000000000000
+      internalID: 2311026448066672926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5bb50844932b9060800000000000000
+      internalID: 6961196768801700698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814c0a4389aff6f00800000000000000
+      internalID: 1112383164608726040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acbb59af4865ce4e0800000000000000
+      internalID: -1951089409418478646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_7
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae9c22ad6630a7a0800000000000000
+      internalID: -6368030028601712991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed6e1348d7dc87a00800000000000000
+      internalID: 754578876557027038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEMONROUGE_9
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 512
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb972e625608e5d0800000000000000
+      internalID: -3033167397928854590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d74f748bdd44ba96da368cc62f7864e9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      DEMONROUGE_0: -7404714979795360459
+      DEMONROUGE_1: 3846158702758775053
+      DEMONROUGE_2: -3815828214777827004
+      DEMONROUGE_3: 2311026448066672926
+      DEMONROUGE_4: 6961196768801700698
+      DEMONROUGE_5: 1112383164608726040
+      DEMONROUGE_6: -1951089409418478646
+      DEMONROUGE_7: -6368030028601712991
+      DEMONROUGE_8: 754578876557027038
+      DEMONROUGE_9: -3033167397928854590
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

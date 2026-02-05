@@ -12,6 +12,9 @@ public class INFINITEPARALLAXE : MonoBehaviour
 
     void Start()
     {
+        if(target == null)
+            target = Camera.main.transform;
+        
         lastTargetPos = target.position;
 
         tiles = new Transform[transform.childCount];
