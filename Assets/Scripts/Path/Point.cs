@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum PointType
@@ -16,6 +17,9 @@ public class Point : MonoBehaviour
 
     [Header("Collider")]
     public CircleCollider2D circle;
+
+    // Runtime graph neighbors (non-sérialisé)
+    [System.NonSerialized] public readonly List<Point> neighbors = new List<Point>(4);
 
     private void Reset() => EnsureCollider();
     private void OnValidate() => EnsureCollider();

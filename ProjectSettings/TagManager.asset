@@ -17,9 +17,9 @@ TagManager:
   - Enemy
   - PlayerTouchEnemy
   - Point
-  - 
-  - 
-  - 
+  - ZoneTrigger
+  - Zone
+  - AiTrigger
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 4272831245
+    locked: 0
+  - name: Player
+    uniqueID: 212217363
     locked: 0
   m_RenderingLayers:
   - Default
