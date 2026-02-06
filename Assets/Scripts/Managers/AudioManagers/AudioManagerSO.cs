@@ -37,7 +37,7 @@ public class AudioManagerSO : ScriptableObject
 
     /*Fonction pour spawn un objet son (non GameObject, donc pas de GetComponent !) dans une pool,
      * avec une position, et en lui assignant un volume en float */
-    public static void PlaySoundFXClip(AudioClip clip, Vector3 soundPos, float volume)
+    public static void PlaySFXClip(AudioClip clip, Vector3 soundPos, float volume)
     {
         float randVolume = Random.Range(volume - _volumeChangeMultiplier, volume + _volumeChangeMultiplier);
         float randPitch = Random.Range(1 - _pitchChangeMultiplier, 1 + _pitchChangeMultiplier);
@@ -52,15 +52,14 @@ public class AudioManagerSO : ScriptableObject
     /* WIP : Fonction pour spawn un container son dans une pool,
      * avec une position, et en lui assignant un volume en float */
 
-    public static void PlayRandomContainerSoundFXClip(AudioClip clip, Vector3 soundPos, float volume)
+    public static void PlayRandomSFXClip(AudioClip[] clips, Vector3 soundPos, float volume)
     {
+        int randClip = Random.Range(0, clips.Length);
         float randVolume = Random.Range(volume - _volumeChangeMultiplier, volume + _volumeChangeMultiplier);
-        float randPitch = Random.Range(1 - _pitchChangeMultiplier, 1 + _pitchChangeMultiplier);
 
         AudioSource a = Instantiate(Instance.SoundObject, soundPos, Quaternion.identity);
-        a.clip = clip;
+        a.clip = clips[randClip];
         a.volume = randVolume;
-        a.pitch = randPitch;
         a.Play();
     }
 }

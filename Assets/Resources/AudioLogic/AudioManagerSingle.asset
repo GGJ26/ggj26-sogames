@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bcdd258d4af5c3408c9416c07017275, type: 3}
-  m_Name: AudioManagerSO
+  m_Name: AudioManagerSingle
   m_EditorClassIdentifier: Assembly-CSharp::AudioManagerSO
   SoundObject: {fileID: 5652562315755996027, guid: b5916bd040519c74c88e496d27a5c1ea, type: 3}
