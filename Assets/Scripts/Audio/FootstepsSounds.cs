@@ -19,7 +19,7 @@ public class FootstepsSounds : MonoBehaviour
         audioSource.Stop();
     }
 
-    void Update()
+  /*  void Update()
     {
         if (transform.position != lastPosition)
         {
@@ -36,5 +36,5 @@ public class FootstepsSounds : MonoBehaviour
             }
         }
         lastPosition = transform.position;
-    }
+    } */
 }
