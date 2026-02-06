@@ -10,6 +10,12 @@ public class Path : MonoBehaviour
     public string anchorsRootName = "Anchors";
     public string generatedRootName = "GeneratedPoints";
 
+    [Header("Multi-Chains")]
+    [Tooltip("Préfixe des sous-dossiers de chaines sous Anchors / GeneratedPoints.")]
+    public string chainPrefix = "Chain_";
+    [Tooltip("Nom de la chain legacy si des anchors sont directement sous Anchors.")]
+    public string legacyChainName = "Chain_00";
+
     [Header("Generation")]
     [Tooltip("Inclure un Point exactement sur chaque anchor.")]
     public bool includeAnchorsAsPoints = true;
@@ -48,7 +54,7 @@ public class Path : MonoBehaviour
     public List<PointTypeOverride> typeOverrides = new List<PointTypeOverride>();
 
     [Tooltip("Tolérance de matching en world units pour retrouver un override par position.")]
-    public float overrideMatchTolerance = 0.15f;
+    public float overrideMatchTolerance = 0.05f;
 
     private Transform _anchorsRoot;
     private Transform _generatedRoot;
@@ -72,6 +78,12 @@ public class Path : MonoBehaviour
     public void EnsureRoots()
     {
         _anchorsRoot = transform.Find(anchorsRootName);
+        if (_anchorsRoot == null)
+        {
+            var go = new GameObject(anchorsRootName);
+            go.transform.SetParent(transform, false);
+            _anchorsRoot = go.transform;
+        }
 
         _generatedRoot = transform.Find(generatedRootName);
         if (_generatedRoot == null)
@@ -82,40 +94,116 @@ public class Path : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Retourne toutes les chaines d'anchors (multi-chemins).
+    /// - Si Anchors contient des sous-dossiers (Chain_XX), on les utilise.
+    /// - Si Anchors contient des PathAnchor directement, ils forment la chain legacy (Chain_00).
+    /// </summary>
+    public List<(string chainName, List<PathAnchor> anchors)> GetAnchorChainsOrdered()
+    {
+        EnsureRoots();
+        var result = new List<(string chainName, List<PathAnchor> anchors)>();
+
+        if (_anchorsRoot == null) return result;
+
+        // 1) Legacy: anchors directement sous Anchors
+        var legacy = _anchorsRoot.GetComponentsInChildren<PathAnchor>(true)
+            .Where(a => a != null && a.transform.parent == _anchorsRoot)
+            .OrderBy(a => a.transform.GetSiblingIndex())
+            .ToList();
+
+        if (legacy.Count > 0)
+            result.Add((legacyChainName, legacy));
+
+        // 2) Chaines: sous-dossiers sous Anchors
+        for (int i = 0; i < _anchorsRoot.childCount; i++)
+        {
+            var child = _anchorsRoot.GetChild(i);
+            if (child == null) continue;
+
+            // ignore legacy anchors (PathAnchor) at root level
+            if (child.GetComponent<PathAnchor>() != null) continue;
+
+            var list = child.GetComponentsInChildren<PathAnchor>(true)
+                .Where(a => a != null && a.transform.parent == child)
+                .OrderBy(a => a.transform.GetSiblingIndex())
+                .ToList();
+
+            if (list.Count > 0)
+                result.Add((child.name, list));
+        }
+
+        // Dédupe par nom (si legacyChainName identique à un dossier existant, on garde le dossier)
+        // => on retire la legacy si un dossier du même nom existe.
+        var hasFolderSame = result.Any(r => r.chainName == legacyChainName && _anchorsRoot.Find(legacyChainName) != null);
+        if (hasFolderSame)
+            result = result.Where(r => r.chainName != legacyChainName || _anchorsRoot.Find(legacyChainName) != null).ToList();
+
+        return result;
+    }
+
+    /// <summary>Crée/retourne un root de chaine sous Anchors.</summary>
+    public Transform EnsureChainRoot(string chainName)
+    {
+        EnsureRoots();
+        if (_anchorsRoot == null) return null;
+
+        var t = _anchorsRoot.Find(chainName);
+        if (t == null)
+        {
+            var go = new GameObject(chainName);
+            go.transform.SetParent(_anchorsRoot, false);
+            t = go.transform;
+        }
+        return t;
+    }
+
+    /// <summary>Crée/retourne un root de chaine sous GeneratedPoints.</summary>
+    public Transform EnsureGeneratedChainRoot(string chainName)
+    {
+        EnsureRoots();
+        if (_generatedRoot == null) return null;
+
+        var t = _generatedRoot.Find(chainName);
+        if (t == null)
+        {
+            var go = new GameObject(chainName);
+            go.transform.SetParent(_generatedRoot, false);
+            t = go.transform;
+        }
+        return t;
+    }
+
     [ContextMenu("Rebuild Now")]
     public void RebuildNow()
     {
         EnsureRoots();
-        var anchors = GetAnchorsOrdered();
 
-        if (anchors.Count < 2)
+        var chains = GetAnchorChainsOrdered();
+
+        // Nettoie tout et regénère
+        ClearGenerated();
+        points.Clear();
+
+        bool hasAnyValidChain = false;
+        foreach (var ch in chains)
+        {
+            if (ch.anchors == null || ch.anchors.Count < 2) continue;
+            hasAnyValidChain = true;
+
+            var genChain = EnsureGeneratedChainRoot(ch.chainName);
+            GeneratePointsFromAnchors(ch.anchors, genChain);
+        }
+
+        if (!hasAnyValidChain)
         {
             ClearGenerated();
             points.Clear();
             return;
         }
 
-        GeneratePointsFromAnchors(anchors);
         RefreshPointsList();
-    }
-
-    private List<PathAnchor> GetAnchorsOrdered()
-    {
-        IEnumerable<PathAnchor> anchors;
-
-        if (_anchorsRoot != null)
-            anchors = _anchorsRoot.GetComponentsInChildren<PathAnchor>(true);
-        else
-            anchors = GetComponentsInChildren<PathAnchor>(true);
-
-        anchors = anchors.Where(a => a != null && _generatedRoot != null && !a.transform.IsChildOf(_generatedRoot));
-
-        // ordre = sibling index (si sous Anchors)
-        if (_anchorsRoot != null)
-            return anchors.Where(a => a.transform.parent == _anchorsRoot).OrderBy(a => a.transform.GetSiblingIndex()).ToList();
-
-        // fallback
-        return anchors.OrderBy(a => a.transform.GetSiblingIndex()).ToList();
+        BuildGraph();
     }
 
     private void ClearGenerated()
@@ -134,8 +222,10 @@ public class Path : MonoBehaviour
         }
     }
 
-    private void GeneratePointsFromAnchors(List<PathAnchor> anchors)
+    private void GeneratePointsFromAnchors(List<PathAnchor> anchors, Transform generatedChainRoot)
     {
+        if (generatedChainRoot == null) return;
+
         // 1) Build samples per segment
         var samples = new List<(Vector3 pos, PointType type, float radius)>();
 
@@ -143,210 +233,224 @@ public class Path : MonoBehaviour
         {
             Vector3 a = anchors[seg].transform.position;
             Vector3 b = anchors[seg + 1].transform.position;
-            float dist = Vector3.Distance(a, b);
-
-            if (dist < 0.0001f)
-                continue;
 
             PointType segType = useAnchorSegmentType ? anchors[seg].segmentType : defaultPointType;
 
-            // --- Choose count & radius for THIS segment so circles "fill" the distance ---
-            int count = 2; // at least endpoints
+            // radius choisi: soit uniform par segment (pour combler), soit interpolation entre min/max.
+            float dist = Vector3.Distance(a, b);
             float radius;
 
-            // Prefer as few points as possible while keeping radius <= radiusMax
-            int tentative = Mathf.FloorToInt(dist / (2f * Mathf.Max(0.0001f, radiusMax))) + 1;
-            count = Mathf.Max(2, tentative);
-
-            float spacing = dist / (count - 1);
-            radius = spacing * 0.5f;
-
-            // If radius got too small, enforce min radius (will create overlap, still ok)
-            if (radius < radiusMin)
+            if (uniformRadiusPerSegment)
             {
-                radius = radiusMin;
-                count = Mathf.CeilToInt(dist / (2f * Mathf.Max(0.0001f, radiusMin))) + 1;
-                count = Mathf.Max(2, count);
-                spacing = dist / (count - 1);
+                // Nombre de points approximatif pour combler avec un petit overlap
+                float targetDiameter = Mathf.Clamp(dist / 6f, radiusMin * 2f, radiusMax * 2f);
+                radius = Mathf.Clamp(targetDiameter * 0.5f, radiusMin, radiusMax);
             }
             else
             {
-                radius = Mathf.Min(radius, radiusMax);
+                radius = Mathf.Lerp(radiusMin, radiusMax, 0.5f);
             }
 
-            // Add points along segment
+            float step = Mathf.Max(0.001f, radius * 1.8f); // overlap léger
+            int count = Mathf.Max(2, Mathf.CeilToInt(dist / step) + 1);
+
             for (int i = 0; i < count; i++)
             {
-                float t = (count <= 1) ? 0f : (float)i / (count - 1);
+                float t = (count <= 1) ? 0f : (i / (float)(count - 1));
                 Vector3 p = Vector3.Lerp(a, b, t);
+
+                // évite doublons (fin d'un segment == début du suivant)
+                if (samples.Count > 0)
+                {
+                    if ((samples[^1].pos - p).sqrMagnitude < 0.000001f)
+                        continue;
+                }
+
+                // option: exclure anchors exact si includeAnchorsAsPoints false
+                if (!includeAnchorsAsPoints)
+                {
+                    if ((p - a).sqrMagnitude < 0.000001f) continue;
+                    if ((p - b).sqrMagnitude < 0.000001f) continue;
+                }
+
                 samples.Add((p, segType, radius));
             }
         }
 
-        // 2) Remove near-duplicates (anchors shared between segments)
-        samples = RemoveNearDuplicates(samples, 0.0001f);
-
-        // 3) Apply to generated children
-        EnsureGeneratedChildrenCount(samples.Count);
-
+        // 2) Spawn Points
         for (int i = 0; i < samples.Count; i++)
         {
-            Point pt = GetGeneratedPointChild(i);
-            if (pt == null) continue;
+            var s = samples[i];
 
-            pt.transform.position = samples[i].pos;
-            pt.walkable = defaultWalkable;
+            var go = new GameObject($"P_{i:000}");
+            go.transform.SetParent(generatedChainRoot, true);
+            go.transform.position = s.pos;
 
-            // Default type from generation...
-            PointType computedType = samples[i].type;
+            var point = go.AddComponent<Point>();
+            point.walkable = defaultWalkable;
 
-            // ...but override if any (persistent)
-            if (TryGetOverride(pt.transform.position, out PointType forcedType))
-                pt.pointType = forcedType;
+            // Applique override si existant
+            if (TryGetOverrideType(s.pos, out var overrideType))
+                point.pointType = overrideType;
             else
-                pt.pointType = computedType;
+                point.pointType = s.type;
 
-            pt.EnsureCollider();
-            pt.circle.radius = uniformRadiusPerSegment
-                ? samples[i].radius
-                : Mathf.Clamp(samples[i].radius, radiusMin, radiusMax);
+            point.EnsureCollider();
 
-            pt.gameObject.name = $"Point_{i:000}_{pt.pointType}";
-            pt.transform.SetSiblingIndex(i);
+            if (point.circle != null)
+                point.circle.radius = s.radius;
         }
     }
 
-    private List<(Vector3 pos, PointType type, float radius)> RemoveNearDuplicates(List<(Vector3 pos, PointType type, float radius)> src, float eps)
-    {
-        var res = new List<(Vector3 pos, PointType type, float radius)>();
-        float eps2 = eps * eps;
-
-        for (int i = 0; i < src.Count; i++)
-        {
-            if (res.Count == 0)
-            {
-                res.Add(src[i]);
-                continue;
-            }
-
-            var last = res[res.Count - 1];
-            if ((src[i].pos - last.pos).sqrMagnitude > eps2)
-                res.Add(src[i]);
-        }
-        return res;
-    }
-
-    private void EnsureGeneratedChildrenCount(int needed)
-    {
-        if (_generatedRoot == null) return;
-
-        // direct children only
-        var existing = new List<Point>();
-        for (int i = 0; i < _generatedRoot.childCount; i++)
-        {
-            var p = _generatedRoot.GetChild(i).GetComponent<Point>();
-            if (p != null) existing.Add(p);
-        }
-
-        // delete extra
-        for (int i = existing.Count - 1; i >= needed; i--)
-        {
-            var go = existing[i].gameObject;
-#if UNITY_EDITOR
-            if (!Application.isPlaying) DestroyImmediate(go);
-            else Destroy(go);
-#else
-            Destroy(go);
-#endif
-        }
-
-        // create missing
-        for (int i = existing.Count; i < needed; i++)
-        {
-            var go = new GameObject("Point_" + i.ToString("000"));
-            go.transform.SetParent(_generatedRoot, false);
-            var pt = go.AddComponent<Point>();
-            pt.pointType = defaultPointType;
-            pt.walkable = defaultWalkable;
-            pt.EnsureCollider();
-        }
-    }
-
-    private Point GetGeneratedPointChild(int index)
-    {
-        if (_generatedRoot == null) return null;
-
-        int found = -1;
-        for (int i = 0; i < _generatedRoot.childCount; i++)
-        {
-            var child = _generatedRoot.GetChild(i);
-            var p = child.GetComponent<Point>();
-            if (p == null) continue;
-            found++;
-            if (found == index) return p;
-        }
-        return null;
-    }
-
-    private void RefreshPointsList()
-    {
-        points.Clear();
-        if (_generatedRoot == null) return;
-
-        for (int i = 0; i < _generatedRoot.childCount; i++)
-        {
-            var p = _generatedRoot.GetChild(i).GetComponent<Point>();
-            if (p != null) points.Add(p);
-        }
-    }
-
-    // --------------------------------------------------------------------
-    // Overrides API (used by the editor tool)
-    // --------------------------------------------------------------------
-    public bool TryGetOverride(Vector3 pos, out PointType t)
+    private bool TryGetOverrideType(Vector3 worldPos, out PointType type)
     {
         float tol2 = overrideMatchTolerance * overrideMatchTolerance;
-
         for (int i = 0; i < typeOverrides.Count; i++)
         {
-            if ((typeOverrides[i].position - pos).sqrMagnitude <= tol2)
+            var o = typeOverrides[i];
+            if ((o.position - worldPos).sqrMagnitude <= tol2)
             {
-                t = typeOverrides[i].type;
+                type = o.type;
                 return true;
             }
         }
 
-        t = default;
+        type = default;
         return false;
     }
 
-    public void SetOverride(Vector3 pos, PointType t)
+    private void RefreshPointsList()
     {
-        float tol2 = overrideMatchTolerance * overrideMatchTolerance;
+        points = (_generatedRoot != null)
+            ? _generatedRoot.GetComponentsInChildren<Point>(true).ToList()
+            : GetComponentsInChildren<Point>(true).ToList();
+    }
 
-        for (int i = 0; i < typeOverrides.Count; i++)
+    // --------------------------------------------------------------------
+    // Graph / Navigation
+    // --------------------------------------------------------------------
+
+    [ContextMenu("Build Graph")]
+    public void BuildGraph()
+    {
+        EnsureRoots();
+        if (points == null) RefreshPointsList();
+
+        // clear
+        for (int i = 0; i < points.Count; i++)
         {
-            if ((typeOverrides[i].position - pos).sqrMagnitude <= tol2)
+            if (points[i] == null) continue;
+            points[i].neighbors.Clear();
+        }
+
+        if (_generatedRoot == null) return;
+
+        // 1) connexions intra-chaine (i <-> i+1)
+        for (int c = 0; c < _generatedRoot.childCount; c++)
+        {
+            var chainRoot = _generatedRoot.GetChild(c);
+            if (chainRoot == null) continue;
+
+            var chainPoints = chainRoot.GetComponentsInChildren<Point>(true)
+                .Where(p => p != null && p.transform.parent == chainRoot)
+                .OrderBy(p => p.transform.GetSiblingIndex())
+                .ToList();
+
+            for (int i = 0; i < chainPoints.Count - 1; i++)
             {
-                var o = typeOverrides[i];
-                o.position = pos; // recale la position au cas où
-                o.type = t;
-                typeOverrides[i] = o;
-                return;
+                Link(chainPoints[i], chainPoints[i + 1], bidirectional: true);
             }
         }
 
-        typeOverrides.Add(new PointTypeOverride { position = pos, type = t });
+        // 2) PathLinks explicites (sous ce Path)
+        var links = GetComponentsInChildren<PathLink>(true);
+        foreach (var l in links)
+        {
+            if (l == null || !l.isActiveAndEnabled) continue;
+            if (l.a == null || l.b == null) continue;
+
+            Link(l.a, l.b, l.bidirectional);
+        }
     }
 
-    public void RemoveOverrideNear(Vector3 pos)
+    private static void Link(Point a, Point b, bool bidirectional)
     {
-        float tol2 = overrideMatchTolerance * overrideMatchTolerance;
-
-        for (int i = typeOverrides.Count - 1; i >= 0; i--)
+        if (a == null || b == null) return;
+        if (!a.neighbors.Contains(b)) a.neighbors.Add(b);
+        if (bidirectional)
         {
-            if ((typeOverrides[i].position - pos).sqrMagnitude <= tol2)
-                typeOverrides.RemoveAt(i);
+            if (!b.neighbors.Contains(a)) b.neighbors.Add(a);
         }
+    }
+
+    /// <summary>
+    /// BFS simple sur le graphe. Retourne un chemin incluant start et goal.
+    /// </summary>
+    public bool TryFindPath(Point start, Point goal, List<Point> outPath, bool allowNonWalkable = false)
+    {
+        outPath?.Clear();
+        if (start == null || goal == null) return false;
+        if (start == goal)
+        {
+            outPath?.Add(start);
+            return true;
+        }
+
+        // si graph pas construit (ex: en play, mais pas rebuild)
+        if (start.neighbors == null || start.neighbors.Count == 0)
+            BuildGraph();
+
+        var q = new Queue<Point>();
+        var prev = new Dictionary<Point, Point>(256);
+        var visited = new HashSet<Point>();
+
+        bool IsOk(Point p) => p != null && (allowNonWalkable || p.walkable);
+
+        if (!IsOk(start) || !IsOk(goal)) return false;
+
+        visited.Add(start);
+        q.Enqueue(start);
+
+        while (q.Count > 0)
+        {
+            var cur = q.Dequeue();
+            if (cur == null) continue;
+
+            var neigh = cur.neighbors;
+            for (int i = 0; i < neigh.Count; i++)
+            {
+                var n = neigh[i];
+                if (!IsOk(n)) continue;
+                if (visited.Contains(n)) continue;
+
+                visited.Add(n);
+                prev[n] = cur;
+
+                if (n == goal)
+                {
+                    Reconstruct(goal, prev, outPath);
+                    return true;
+                }
+
+                q.Enqueue(n);
+            }
+        }
+
+        return false;
+    }
+
+    private static void Reconstruct(Point goal, Dictionary<Point, Point> prev, List<Point> outPath)
+    {
+        outPath.Clear();
+        var cur = goal;
+        outPath.Add(cur);
+
+        while (prev.TryGetValue(cur, out var p))
+        {
+            cur = p;
+            outPath.Add(cur);
+        }
+
+        outPath.Reverse();
     }
 }
